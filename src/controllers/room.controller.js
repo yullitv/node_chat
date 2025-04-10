@@ -38,15 +38,14 @@ export const update = async (req, res) => {
 };
 
 export const remove = async (req, res) => {
-  const roomId = req.params;
+  const { roomId } = req.params;
 
   if (!roomId) {
-    res.sendStatus(404);
+    res.sendStatus(400);
 
     return;
   }
 
   await roomService.removeRoom(roomId);
-
   res.sendStatus(204);
 };
