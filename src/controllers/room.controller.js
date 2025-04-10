@@ -38,7 +38,7 @@ export const update = async (req, res) => {
 };
 
 export const remove = async (req, res) => {
-  const roomId = req.params.body;
+  const roomId = req.params;
 
   if (!roomId) {
     res.sendStatus(404);
